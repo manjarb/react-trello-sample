@@ -10,10 +10,11 @@ export default class Column extends React.Component {
             <div style={style.container}>
                 <h3 style={style.title}>{this.props.column.title}</h3>
                 <Droppable droppableId={this.props.column.id}>
-                    {(provided) => (
+                    {(provided, snapshot) => (
                         <div style={style.taskList}
                             ref={provided.innerRef}
                             {...provided.droppableProps}
+                            // isDraggingOver={snapshot.isDraggingOver}
                         >
                             {this.props.tasks.map((task, index) => <Task key={task.id} task={task} index={index}/>)}
                             {provided.placeholder}

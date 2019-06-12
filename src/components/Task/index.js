@@ -6,12 +6,15 @@ export default class Task extends React.Component {
     render() {
         return (
             <Draggable draggableId={this.props.task.id} index={this.props.index}>
-                {(provided) =>
+                {(provided, snapshot) =>
                     
                     <div ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}>
-                        <div style={style.container}>
+                        <div style={{
+                            ...style.container, 
+                            backgroundColor: snapshot.isDragging ? 'yellow' : 'green' 
+                        }}>
                             {this.props.task.content}
                         </div>
                     </div> 

@@ -5,9 +5,10 @@ export default class Task extends React.Component {
     
     render() {
         return (
-            <Draggable draggableId={this.props.task.id} index={this.props.index}>
+            <Draggable draggableId={this.props.task.id} 
+                index={this.props.index}
+                isDragDisabled={this.props.task.id === 'task-1'}>
                 {(provided, snapshot) =>
-                    
                     <div ref={provided.innerRef}
                         {...provided.dragHandleProps}
                         {...provided.draggableProps}>

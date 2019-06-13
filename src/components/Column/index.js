@@ -30,13 +30,18 @@ const style = {
     container: {
         margin: '8px',
         border: '1px solid lightgrey',
-        borderRadius: '2px'
+        borderRadius: '2px',
+        width: '220px',
+        display: 'flex',
+        flexDirection: 'column'
     },
     title: {
         padding: '8px'
     },
     taskList: {
        padding: '8px',
-       backgroundColor: 'red'
+       backgroundColor: 'red',
+       flexGrow: '1',
+       minHeight: '100px'
     }
 }

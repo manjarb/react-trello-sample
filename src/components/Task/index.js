@@ -9,12 +9,14 @@ export default class Task extends React.Component {
                 {(provided, snapshot) =>
                     
                     <div ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}>
+                        {...provided.dragHandleProps}
+                        {...provided.draggableProps}>
                         <div style={{
                             ...style.container, 
                             backgroundColor: snapshot.isDragging ? 'yellow' : 'green' 
                         }}>
+                            {/* <div style={style.handle}
+                                {...provided.dragHandleProps}></div> */}
                             {this.props.task.content}
                         </div>
                     </div> 
@@ -30,12 +32,19 @@ const style = {
         border: '1px solid lightgrey',
         borderRadius: '2px',
         padding: '8px',
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        display: 'flex'
     },
     title: {
         padding: '8px'
     },
     taskList: {
        padding: '8px'
+    },
+    handle: {
+        width: '20px',
+        height: '20px',
+        backgroundColor: 'orange',
+        borderRadius: '4px'
     }
 }
